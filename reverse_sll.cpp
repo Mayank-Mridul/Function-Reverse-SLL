@@ -12,9 +12,134 @@ struct Node {
 };
 */
 // Should reverse list and return new head.
-Node* reverseList(Node *head)
+
+
+#include<stdio.h>
+#include<stdlib.h>
+struct node{
+int data;
+struct node *next;
+}*start = NULL;
+
+node* reverseList(node *head);
+void create(int x);
+void display();
+
+int main(){
+
+int n,x,chc,ch=1,loc,locd;
+char con,u='y';
+
+// THIS PROGRAM OFFERS EVERY BASIC FEATURE OF LINKED LIST
+// YOU CAN SEE ALL THE FEATURES IN THE MENU
+
+while(ch!=13){
+printf("ENTER THE CHOICE \n\n ******** ENTER 1 TO ENTER THE NEW ELEMENT ******* \n");
+printf("******** ENTER 2 TO DISPLAY THE ELEMENTS ******* \n");
+printf("******** ENTER 3 TO INSERT A NEW ELEMNT AT THE BEGINING ******* \n");
+printf("******** ENTER 4 TO INSERT A NEW ELEMNT AT THE END ******* \n");
+printf("******** ENTER 5 TO INSERT A NEW ELEMNT AT ANY LOCATION******* \n");
+printf("******** ENTER 6 TO DELETE A ELEMNT FROM THE BEGINING******* \n");
+printf("******** ENTER 7 TO DELETE A ELEMNT FROM THE END***** \n");
+printf("******** ENTER 8 TO DELETE A ELEMNT FROM THE ANY LOCATION***** \n");
+printf("******** ENTER 9 TO DELETE AFTER A GIVEN ELEMNT***** \n");
+printf("******** ENTER 10 TO INSERT AFTER A GIVEN ELEMNT***** \n");
+scanf("%d", &chc);
+switch (chc){
+
+case 1:
+printf("ENTER THE ELEMENT\n");
+scanf("%d", &x);
+create(x);
+break;
+
+case 2:
+display();
+break;
+
+case 3:
+start = reverseList(start);
+break;
+
+
+default: printf("WRONG INPUT\n");
+
+}
+
+printf("DO YOU WANT TO CONTINUE\n");
+printf("IF YES THEN ENTER Y IF NO THEN ENTER N\n");
+scanf(" %c", &con);
+if(con!=u)
+break;
+}
+}
+
+// THIS FUNCTION CREATES A NODE
+
+void create(int x){
+
+struct node *ptr, *temp;
+ptr = (struct node*)malloc(sizeof(struct node));
+ptr->data = x;
+ptr->next = NULL;
+if(start == NULL){
+start = ptr;
+}
+else{
+temp = start;
+
+    while(temp->next!=NULL){
+    temp = temp->next;
+    }
+    
+    temp->next = ptr;
+}
+}
+
+// THIS FUNCTION PRINTS THE LINKED LIST
+
+void display(){
+struct node *temp;
+temp = start;
+printf("THE LINKED LIS AS FOLLOWS:\n");
+
+if(start == NULL){
+printf("LIST IS EMPTY\n");
+}
+else{
+while(temp!=NULL){
+printf("%d\n", temp->data);
+temp = temp->next;
+}
+}
+}
+
+
+
+node* reverseList(node *head)
 {
-    struct Node *temp1, *temp2;
+        // Initialize current, previous and 
+        // next pointers 
+        node* current = head; 
+        
+        node *prev = NULL, *next = NULL; 
+  
+        while (current != NULL) { 
+            // Store next 
+            next = current->next; 
+  
+            // Reverse current node's pointer 
+            current->next = prev; 
+  
+            // Move pointers one position ahead. 
+            prev = current; 
+            current = next; 
+        } 
+        head = prev; 
+    
+
+    /* 
+    struct node *temp1, *temp2;
     
     if(head == NULL){
         return 0;
@@ -38,6 +163,8 @@ Node* reverseList(Node *head)
         
         return head;
     }
+
+    */
     
     
 }
