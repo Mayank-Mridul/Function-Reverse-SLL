@@ -36,14 +36,7 @@ char con,u='y';
 while(ch!=13){
 printf("ENTER THE CHOICE \n\n ******** ENTER 1 TO ENTER THE NEW ELEMENT ******* \n");
 printf("******** ENTER 2 TO DISPLAY THE ELEMENTS ******* \n");
-printf("******** ENTER 3 TO INSERT A NEW ELEMNT AT THE BEGINING ******* \n");
-printf("******** ENTER 4 TO INSERT A NEW ELEMNT AT THE END ******* \n");
-printf("******** ENTER 5 TO INSERT A NEW ELEMNT AT ANY LOCATION******* \n");
-printf("******** ENTER 6 TO DELETE A ELEMNT FROM THE BEGINING******* \n");
-printf("******** ENTER 7 TO DELETE A ELEMNT FROM THE END***** \n");
-printf("******** ENTER 8 TO DELETE A ELEMNT FROM THE ANY LOCATION***** \n");
-printf("******** ENTER 9 TO DELETE AFTER A GIVEN ELEMNT***** \n");
-printf("******** ENTER 10 TO INSERT AFTER A GIVEN ELEMNT***** \n");
+printf("******** ENTER 3 TO REVERSE THE SLL ******* \n");
 scanf("%d", &chc);
 switch (chc){
 
@@ -121,7 +114,7 @@ node* reverseList(node *head)
         // Initialize current, previous and 
         // next pointers 
         node* current = head; 
-        
+
         node *prev = NULL, *next = NULL; 
   
         while (current != NULL) { 
