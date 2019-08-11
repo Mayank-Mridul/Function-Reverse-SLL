@@ -13,6 +13,8 @@ struct Node {
 */
 // Should reverse list and return new head.
 
+// This is the Function to reverse
+// Hope you will like it
 
 #include<stdio.h>
 #include<stdlib.h>
